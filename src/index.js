@@ -1,13 +1,16 @@
-const express = require('express');
-const config = require("./config/config");
+const express = require("express");
+const mongoose = require("mongoose");
+const mongoDbString = require("./config/config");
 
 const app = express();
 
-console.log(config)
 
-app.set('view engine', 'ejs');
-app.set('views', 'src/views');
+//prisijungimas prie duombazes
+mongoose.connect(mongoDbString)
+
+app.set("view engine", "ejs");
+app.set("views", "src/views");
 
 app.listen(5000);
 
-app.get('/', (req, res) => res.render('index'));
+app.get("/", (req, res) => res.render('index'));
