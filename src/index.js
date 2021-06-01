@@ -6,7 +6,7 @@ const app = express();
 
 
 //prisijungimas prie duombazes
-mongoose.connect(mongoDbString)
+mongoose.connect(mongoDbString,{ useNewUrlParser : true, useUnifiedTopology : true})
 
 app.set("view engine", "ejs");
 app.set("views", "src/views");
