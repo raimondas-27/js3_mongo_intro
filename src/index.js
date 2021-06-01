@@ -30,19 +30,19 @@ app.get("/posts", (req, res) => {
        .catch((error) => console.warn(error));
 })
 
-//get single post
+//get single post from mongo and put it to ejs file
 app.get("/single-post",(req, res) => {
    const id = "60b60747c7707ccc732616ea"
    Post.findById(id)
        .then(result => {
-          console.log(result)
-          res.json(result)
+
+          res.render("single", result)
        })
        .catch((error) => console.warn(error))
 })
 
 
-//create new post
+//create new post and sent it to mongo db
 app.get("/add-post", (req, res) => {
    //si nauja posta norime sukurti pagal schemoje aprasyta modeli
    const newPost = new Post({
