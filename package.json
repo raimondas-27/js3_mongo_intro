@@ -1,0 +1,20 @@
+{
+  "name": "js3_mongo_intro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "R.K.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raimondas-27/js3_mongo_intro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/raimondas-27/js3_mongo_intro/issues"
+  },
+  "homepage": "https://github.com/raimondas-27/js3_mongo_intro#readme",
+  "description": ""
+}
