@@ -30,6 +30,17 @@ app.get("/posts", (req, res) => {
        .catch((error) => console.warn(error));
 })
 
+//get single post
+app.get("/single-post",(req, res) => {
+   const id = "60b60747c7707ccc732616ea"
+   Post.findById(id)
+       .then(result => {
+          console.log(result)
+          res.json(result)
+       })
+       .catch((error) => console.warn(error))
+})
+
 
 //create new post
 app.get("/add-post", (req, res) => {
