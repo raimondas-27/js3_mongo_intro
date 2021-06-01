@@ -20,14 +20,28 @@ mongoose.connect(mongoDbString, {useNewUrlParser: true, useUnifiedTopology: true
 
 app.get("/", (req, res) => res.render('index'));
 
+//get all posts
+app.get("/posts", (req, res) => {
+   Post.find()
+       .then((result) => {
+          console.log(result)
+          res.send(result)
+       })
+       .catch((error) => console.warn(error));
+})
+
+
+//create new post
 app.get("/add-post", (req, res) => {
    //si nauja posta norime sukurti pagal schemoje aprasyta modeli
    const newPost = new Post({
-      title: "this is mongoose db",
+      title: "3000 leagues under the sea",
       author: "Mike Tyson",
       body: "mongodb is an easy way to db",
    })
    //issaugoti duomenu bazeje naudojame .save()
-   newPost.save()
-   res.send("all good");
+   newPost
+       .save()
+       .then((result) => res.send(result))
+       .catch(error => console.warn(error))
 })
